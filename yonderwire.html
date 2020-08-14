@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name=”viewport” content=”width=device-width, initial-scale=1″>
+<title>YonderWire - Tech & Media Company</title>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'yw.png' %}">
+<!--<script type="text/javascript" src="js/jscript_index.js"></scrip-->
+<script src={% static "jquery-1.11.1.min.js" %} type="text/javascript"></script>
+<script src={% static "jquery.leanModal.min.js" %} type="text/javascript"></script>
+<link rel="stylesheet" href="{% static 'popups.css' %}"/>
+<link rel="stylesheet" href="{% static 'central-stylesheet.css' %}"/>
+<link rel="stylesheet" href="{% static 'styles.css' %}"/>
+  {% block index_css %}
+    {% include "index_css.html" %}
+  {% endblock %}
+</head>
+<body>
+<!--START OF CONTAINER-->
+<div id="i_1_container" name="n_1_container">
+
+    <!--START OF HEADER -->
+    {% if user.is_authenticated %}
+    <div class="c_align_r_small_text"><span class="c_hello">Hello </span>{{ user.username }} 
+    </div>
+    {% endif %}
+
+    <div id="i_2_header" name="n_2_header">
+    <div class="wrapper">
+    {% block header %}
+    {% include "header.html" %}
+    {% endblock %}
+    </div>
+    </div>
+    <!--END OF HEADER-->
+
+    <!--START OF SUBHEADER-->
+    <div id="i_4_subheader" name="n_4_subheader"><br />
+    <div class="c_Search">
+    <input type="text" id="i_3_search" name="n_3_search" value="Search"/>
+    </div>
+    <div class="wrapper">
+    {% block subheader %}
+    {% include "subheader.html" %}
+    {% endblock %}
+    </div>
+    </div>
+    <!--END OF SUBHEADER-->
+
+    <!--START OF CONTENT-->
+    <div id="i_5_content" name="n_5_content">
+    <div class="wrapper">
+    {% block content %}
+    {% include "content.html" %}
+    {% endblock %}
+    </div>
+
+    <div class="c_contentHolder_Right">
+    <div class="c_rSideBarImg"><img src="{% static "book_a.png" %}" /></div>
+    <div class="c_rSideBarText"><span class="c_Style_RedFont">
+    
+    <!----Red Font--------->
+    Getting Started
+    <!----End of Red Font-->
+    
+    </span><br />
+    Click <a href="#">here</a> 
+    to find out what steps you should follow in order to get started
+    on a new project.</div>
+    <div class="c_rSideBarImg"><img src="{% static "book_c.png" %}"/></div>
+    <div class="c_rSideBarText"><span class="c_Style_RedFont">
+    
+    <!----Red Font--------->
+    Watch Training Videos
+    <!----End of Red Font-->    
+    
+    </span><br />
+    Click <a href="#">here</a> 
+    to watch training videos in order to learn the fundamentals of 
+    mobile design.</div>
+	</div>
+    </div> 
+    <!--END OF CONTENT-->
+    
+    <!--START OF SUBCONTENT-->
+    <div id="i_6_subcontent" name="n_6_subcontent">
+    <div class="wrapper">
+    {% block subcontent %}
+    {% include "subcontent.html" %}
+    {% endblock %}
+    </div>
+	<div class="c_subContentHolder_Right">
+    <div class="c_rSideBarImg"><img src="{% static "book_p.jpg" %}" /></div>
+    <div class="c_rSideBarText"><span class="c_Style_RedFont"> 
+    
+    <!----Red Font--------->
+    Join a Project
+    <!----End of Red Font--> 
+    
+    </span><br />
+    Click <a href="#">here</a> 
+    to join a new or current project. Start innovating and designing
+    for the future.</div>
+    <div class="c_rSideBarImg"><img src="{% static "book_r.jpg" %}" /></div>
+    <div class="c_rSideBarText"><span class="c_Style_RedFont">
+    
+    <!----Red Font--------->
+    Donate to Projects
+    <!----End of Red Font--> 
+    
+    </span><br />
+    Click <a href="#">here</a> 
+    to donote to any project. Help us grow and 
+    expand for the future.</div>
+    </div>
+    </div>
+    <!--END OF SUBCONTENT-->
+
+    <!--START OF BOTTOM BAR-->
+    <div id="i_7_bottombar" name="n_7_bottombar">
+    <span class="c_bottomBar"><a href="#">FAQ</a></span>  |
+    <span class="c_bottomBar"><a href="#">Tutorials</a></span> |
+    <span class="c_bottomBar"><a href="#">Events</a></span> |
+    <span class="c_bottomBar"><a href="#">Internships</a></span> |
+    <span class="c_bottomBar"><a href="#">Employment</a></span> |
+    <span class="c_bottomBar"><a href="#">Blogs</a></span> |
+    <span class="c_bottomBar"><a href="#">Partners</a></span> |
+    <span class="c_bottomBar"><a href="#">Books</a></span>
+    </div>
+<!--END OF BOTTOM BAR-->
+
+ <!--START OF FOOTER-->
+<div id="i_8_footer" name="n_8_footer">
+    <span class="c_bottomBar">© 2014</span>
+    <span class="c_bottomBar">S.E. Omoruyi</span>
+</div>
+<!--END OF FOOTER-->
+
+</div>
+<!--END OF CONTAINER-->
+
+<div class="wrapper">
+  {% block javascript %}
+    {% include "javascript.html" %}
+  {% endblock %}
+</div>
+<script type="text/javascript" src={% static "jscript.js" %}></script>
+
+</body>
+
+</html>
